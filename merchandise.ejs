@@ -1,0 +1,24 @@
+<table class="table table-bordered">
+  <h1>"Welcome!"</h1>
+  <br>
+  <% if (merchandise.length === 0) { %>
+    <tr>
+      <td colspan="4">자료 없음</td>
+    </tr>
+  <% } else {
+    var i = 0;
+    while (i < merchandise.length) { %>
+      <tr>
+        <td><img src="/public/images/<%= merchandise[i].image %>" style="width:100px;height:100px; "></td>
+        <td><%= merchandise[i].name %></td>
+        <td><%= merchandise[i].price %></td>
+        <td><%= merchandise[i].brand %></td>
+        <%  if(view === 'u') { %>
+        <td><a href="/merchandise/update/<%= merchandise[i].mer_id %>">수정</a></td>
+        <td><a href="/merchandise/delete/<%= merchandise[i].mer_id %>" onclick='if(confirm("정말로 삭제하시겠습니까?")==false){ return false }'>삭제</a></td>
+        <% } %>
+      </tr>
+      <% i += 1;
+    }
+  } %>
+</table>
