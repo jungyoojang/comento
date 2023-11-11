@@ -12,7 +12,7 @@
         <td><img src="/public/images/<%= merchandise[i].image %>" style="width:100px;height:100px; "></td>
         <td><%= merchandise[i].name %></td>
         <td><%= merchandise[i].price %></td>
-        <td><%= merchandise[i].brand %></td>
+        <td><%= merchandise[i].description %></td>
         <%  if(view === 'u') { %>
         <td><a href="/merchandise/update/<%= merchandise[i].mer_id %>">수정</a></td>
         <td><a href="/merchandise/delete/<%= merchandise[i].mer_id %>" onclick='if(confirm("정말로 삭제하시겠습니까?")==false){ return false }'>삭제</a></td>
